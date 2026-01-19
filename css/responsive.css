@@ -1,0 +1,625 @@
+/* =========================================
+   Adam's Hus&Hytteservice - Responsive Styles
+   Mobile-first approach
+   ========================================= */
+
+/* -----------------------------------------
+   Large Desktop (1200px+)
+   ----------------------------------------- */
+@media (min-width: 1200px) {
+    .hero__title {
+        font-size: 3.5rem;
+    }
+
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* -----------------------------------------
+   Desktop (1024px - 1199px)
+   ----------------------------------------- */
+@media (max-width: 1199px) {
+    .footer__grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+
+    .footer__contact {
+        grid-column: span 3;
+        margin-top: var(--space-xl);
+        padding-top: var(--space-xl);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        gap: var(--space-xl);
+        flex-wrap: wrap;
+    }
+}
+
+/* -----------------------------------------
+   Tablet (768px - 1023px)
+   ----------------------------------------- */
+@media (max-width: 1023px) {
+    :root {
+        --text-5xl: 2.5rem;
+        --text-4xl: 2rem;
+        --text-3xl: 1.5rem;
+    }
+
+    /* Navigation */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--color-white);
+        flex-direction: column;
+        padding: var(--space-4xl) var(--space-xl);
+        box-shadow: var(--shadow-xl);
+        transition: right var(--transition-base);
+        z-index: var(--z-modal);
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav__link {
+        display: block;
+        padding: var(--space-md) 0;
+        border-bottom: 1px solid var(--color-light-gray);
+        font-size: var(--text-lg);
+    }
+
+    .nav__cta {
+        margin-top: var(--space-xl);
+        justify-content: center;
+    }
+
+    /* Overlay */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: var(--z-fixed);
+    }
+
+    .nav-overlay.active {
+        display: block;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero__content {
+        max-width: 100%;
+    }
+
+    /* Service Cards */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Features */
+    .features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Service Sections */
+    .service-section__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    /* About */
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .about-intro__image {
+        order: -1;
+    }
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    /* Packages */
+    .packages-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: var(--space-xl) auto 0;
+    }
+
+    .package-card--featured {
+        transform: none;
+    }
+
+    /* Footer */
+    .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+    }
+
+    .footer__brand {
+        grid-column: span 2;
+    }
+
+    .footer__contact {
+        grid-column: span 2;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Pain Points */
+    .pain-points__list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -----------------------------------------
+   Mobile Large (576px - 767px)
+   ----------------------------------------- */
+@media (max-width: 767px) {
+    :root {
+        --text-5xl: 2rem;
+        --text-4xl: 1.75rem;
+        --text-3xl: 1.375rem;
+        --space-3xl: 3rem;
+        --space-4xl: 4rem;
+    }
+
+    /* Header */
+    .header__logo-text {
+        font-size: var(--text-base);
+    }
+
+    .header__logo-text span {
+        display: none;
+    }
+
+    /* Contact Bar */
+    .contact-bar__container {
+        gap: var(--space-md);
+    }
+
+    .contact-bar__item span {
+        display: none;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: var(--space-3xl) 0;
+    }
+
+    .hero__container {
+        padding: var(--space-2xl) var(--container-padding);
+    }
+
+    .hero__badge {
+        font-size: var(--text-xs);
+    }
+
+    .hero__title {
+        font-size: var(--text-4xl);
+    }
+
+    .hero__subtitle {
+        font-size: var(--text-base);
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+    }
+
+    .hero__buttons .btn {
+        width: 100%;
+    }
+
+    /* Service Cards */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Features */
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .feature {
+        padding: var(--space-md);
+    }
+
+    .feature__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature__icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Section spacing */
+    .section {
+        padding: var(--space-2xl) 0;
+    }
+
+    /* Page Header */
+    .page-header {
+        padding: var(--space-2xl) 0;
+    }
+
+    .page-header__title {
+        font-size: var(--text-3xl);
+    }
+
+    /* CTA Section */
+    .cta-section__buttons {
+        flex-direction: column;
+    }
+
+    .cta-section__buttons .btn {
+        width: 100%;
+    }
+
+    /* Contact Info */
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    /* Form */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: var(--space-xl);
+    }
+
+    /* Cabin Appeal */
+    .cabin-appeal__list li {
+        font-size: var(--text-base);
+    }
+
+    /* Service Area */
+    .service-area__grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .footer__brand {
+        grid-column: auto;
+    }
+
+    .footer__contact {
+        grid-column: auto;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+
+    /* Testimonial */
+    .testimonial {
+        padding: var(--space-xl);
+    }
+
+    .testimonial::before {
+        font-size: 50px;
+        top: var(--space-sm);
+        left: var(--space-md);
+    }
+
+    .testimonial__text {
+        font-size: var(--text-base);
+    }
+}
+
+/* -----------------------------------------
+   Mobile Small (up to 575px)
+   ----------------------------------------- */
+@media (max-width: 575px) {
+    :root {
+        --container-padding: 1rem;
+        --text-5xl: 1.75rem;
+        --text-4xl: 1.5rem;
+        --text-3xl: 1.25rem;
+        --text-2xl: 1.125rem;
+    }
+
+    /* Header */
+    .header__container {
+        padding: var(--space-sm) var(--container-padding);
+    }
+
+    .header__logo-icon {
+        width: 35px;
+        height: 35px;
+        font-size: var(--text-lg);
+    }
+
+    /* Contact Bar - simplified */
+    .contact-bar {
+        padding: var(--space-xs) 0;
+    }
+
+    .contact-bar__container {
+        gap: var(--space-sm);
+        font-size: var(--text-xs);
+    }
+
+    /* Hero */
+    .hero__title {
+        font-size: var(--text-3xl);
+    }
+
+    .hero__subtitle {
+        font-size: var(--text-sm);
+    }
+
+    /* Buttons */
+    .btn {
+        padding: var(--space-sm) var(--space-md);
+        font-size: var(--text-sm);
+    }
+
+    .btn--large {
+        padding: var(--space-md) var(--space-lg);
+        font-size: var(--text-base);
+    }
+
+    /* Service Card */
+    .service-card {
+        padding: var(--space-lg);
+    }
+
+    .service-card__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-card__icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Features - single column */
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        gap: var(--space-md);
+        padding: var(--space-sm) 0;
+    }
+
+    .feature__icon {
+        margin: 0;
+    }
+
+    .feature__content {
+        flex: 1;
+    }
+
+    /* Package Card */
+    .package-card {
+        padding: var(--space-lg);
+    }
+
+    .package-card__price {
+        font-size: var(--text-2xl);
+    }
+
+    /* Pain Points */
+    .pain-points__item {
+        padding: var(--space-md);
+    }
+
+    .pain-points__item span {
+        font-size: var(--text-lg);
+    }
+
+    /* Contact */
+    .contact-info__item {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    /* Service Section List */
+    .service-section__list {
+        padding: var(--space-md);
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--space-2xl) 0 var(--space-lg);
+    }
+
+    .footer__title {
+        font-size: var(--text-sm);
+    }
+}
+
+/* -----------------------------------------
+   Print Styles
+   ----------------------------------------- */
+@media print {
+    .header,
+    .footer,
+    .nav-toggle,
+    .btn,
+    .cta-section,
+    .contact-bar {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .hero {
+        background: none;
+        color: #000;
+        min-height: auto;
+        padding: 20pt 0;
+    }
+
+    .hero__title,
+    .hero__subtitle {
+        color: #000;
+    }
+
+    .section {
+        padding: 20pt 0;
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* -----------------------------------------
+   High Contrast / Reduced Motion
+   ----------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #1a4028;
+        --color-text: #000000;
+        --color-text-light: #333333;
+    }
+
+    .btn--primary {
+        border: 2px solid currentColor;
+    }
+
+    .service-card,
+    .package-card,
+    .contact-form {
+        border-width: 2px;
+    }
+}
+
+/* -----------------------------------------
+   Dark Mode Support (optional)
+   ----------------------------------------- */
+@media (prefers-color-scheme: dark) {
+    /* Uncomment to enable dark mode
+    :root {
+        --color-white: #1a1a1a;
+        --color-snow: #242424;
+        --color-light-gray: #333333;
+        --color-medium-gray: #555555;
+        --color-text: #e0e0e0;
+        --color-text-light: #b0b0b0;
+    }
+    */
+}
+
+/* -----------------------------------------
+   Touch Device Optimizations
+   ----------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .nav__link {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .btn {
+        min-height: 44px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-height: 44px;
+    }
+
+    /* Remove hover effects that don't work well on touch */
+    .service-card:hover,
+    .package-card:hover {
+        transform: none;
+    }
+}
+
+/* -----------------------------------------
+   Landscape Mobile
+   ----------------------------------------- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--space-xl) 0;
+    }
+
+    .hero__container {
+        padding: var(--space-lg) var(--container-padding);
+    }
+
+    .page-header {
+        padding: var(--space-xl) 0;
+    }
+}
